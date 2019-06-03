@@ -1,0 +1,74 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
+[ext_resource path="res://EDAS/PNG/elf_male_jump_003.png" type="Texture" id=2]
+[ext_resource path="res://EDAS/PNG/elf_male.png" type="Texture" id=3]
+[ext_resource path="res://EDAS/PNG/elf_male_jump_004.png" type="Texture" id=4]
+[ext_resource path="res://EDAS/PNG/elf_male_jump_001.png" type="Texture" id=5]
+[ext_resource path="res://EDAS/PNG/elf_male_jump_002.png" type="Texture" id=6]
+[ext_resource path="res://EDAS/PNG/elf_male_run_001.png" type="Texture" id=7]
+[ext_resource path="res://EDAS/PNG/elf_male_run_002.png" type="Texture" id=8]
+[ext_resource path="res://EDAS/PNG/elf_male_run_003.png" type="Texture" id=9]
+[ext_resource path="res://EDAS/PNG/elf_male_run_004.png" type="Texture" id=10]
+[ext_resource path="res://EDAS/PNG/elf_male_run_005.png" type="Texture" id=11]
+[ext_resource path="res://EDAS/PNG/elf_male_run_006.png" type="Texture" id=12]
+[ext_resource path="res://EDAS/PNG/elf_male_run_007.png" type="Texture" id=13]
+[ext_resource path="res://EDAS/PNG/elf_male_run_008.png" type="Texture" id=14]
+[ext_resource path="res://EDAS/game bg 10-02.png" type="Texture" id=15]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "Fall",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "Jump",
+"speed": 20.01
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "Run",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 21.005
+height = 36.9963
+
+[node name="Player" type="KinematicBody2D"]
+position = Vector2( 520.453, 298.688 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 5.51, 9.095 )
+shape = SubResource( 2 )
+one_way_collision_margin = 26.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+drag_margin_left = 0.0
+drag_margin_top = 0.0
+drag_margin_right = 0.0
+drag_margin_bottom = 0.0
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Camera2D"]
+
+[node name="game bg 10-02" type="Sprite" parent="Camera2D/ParallaxBackground"]
+position = Vector2( 806.601, 356.205 )
+scale = Vector2( 0.256156, 0.284949 )
+texture = ExtResource( 15 )

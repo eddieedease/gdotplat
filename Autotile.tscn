@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://EDAS/game tileset-01.png" type="Texture" id=1]
+
+[node name="Autotile" type="Node"]
+
+[node name="game tileset-01" type="Sprite" parent="."]
+position = Vector2( -0.915405, 0 )
+texture = ExtResource( 1 )
+centered = false
