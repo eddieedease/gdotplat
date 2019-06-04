@@ -6,7 +6,6 @@
 extents = Vector2( 25, 25 )
 
 [node name="TILEMAP" type="Node2D"]
-editor/display_folded = true
 
 [node name="0" type="Sprite" parent="."]
 editor/display_folded = true
@@ -21,6 +20,7 @@ __meta__ = {
 }
 
 [node name="StaticBody2D" type="StaticBody2D" parent="0"]
+editor/display_folded = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="0/StaticBody2D"]
 position = Vector2( 25, 25 )

@@ -16,8 +16,8 @@ _global_script_class_icons={
 [application]
 
 config/name="Eddot"
-run/main_scene="res://Startmenu.tscn"
-config/icon="res://icon.png"
+run/main_scene="res://scenes/levels/Startmenu.tscn"
+config/icon="res://scenes/objects/icon.png"
 
 [display]
 
