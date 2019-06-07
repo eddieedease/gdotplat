@@ -10,6 +10,8 @@ const JUMP_HEIGHT = -1000
 # x and y vector2
 var motion = Vector2()
 
+var flipped = false
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
@@ -19,10 +21,12 @@ func _physics_process(delta):
 	if Input.is_action_pressed("ui_right"):
 		motion.x = min(motion.x + ACCELERATION, MAXSPEED)
 		$Sprite.flip_h = false
+		flipped = true
 		$Sprite.play("Run")
 	elif Input.is_action_pressed("ui_left"):
 		motion.x = max(motion.x - ACCELERATION, -MAXSPEED)
 		$Sprite.flip_h = true
+		flipped = false
 		$Sprite.play("Run")
 	else:
 		# friction

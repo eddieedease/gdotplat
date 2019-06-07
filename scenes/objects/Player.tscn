@@ -1,40 +1,40 @@
 [gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scenes/objects/KinematicBody2D.gd" type="Script" id=1]
-[ext_resource path="res://EDAS/PNG/elf_male_run_001.png" type="Texture" id=2]
-[ext_resource path="res://EDAS/PNG/elf_male_run_002.png" type="Texture" id=3]
-[ext_resource path="res://EDAS/PNG/elf_male_run_003.png" type="Texture" id=4]
-[ext_resource path="res://EDAS/PNG/elf_male_run_004.png" type="Texture" id=5]
-[ext_resource path="res://EDAS/PNG/elf_male_run_005.png" type="Texture" id=6]
-[ext_resource path="res://EDAS/PNG/elf_male_run_006.png" type="Texture" id=7]
-[ext_resource path="res://EDAS/PNG/elf_male_run_007.png" type="Texture" id=8]
-[ext_resource path="res://EDAS/PNG/elf_male_run_008.png" type="Texture" id=9]
-[ext_resource path="res://EDAS/PNG/elf_male_jump_003.png" type="Texture" id=10]
-[ext_resource path="res://EDAS/PNG/elf_male_jump_004.png" type="Texture" id=11]
-[ext_resource path="res://EDAS/PNG/elf_male_jump_001.png" type="Texture" id=12]
-[ext_resource path="res://EDAS/PNG/elf_male_jump_002.png" type="Texture" id=13]
-[ext_resource path="res://EDAS/PNG/elf_male.png" type="Texture" id=14]
+[ext_resource path="res://EDAS/PNG/elf_male_jump_003.png" type="Texture" id=2]
+[ext_resource path="res://EDAS/PNG/elf_male_jump_004.png" type="Texture" id=3]
+[ext_resource path="res://EDAS/PNG/elf_male_jump_001.png" type="Texture" id=4]
+[ext_resource path="res://EDAS/PNG/elf_male_jump_002.png" type="Texture" id=5]
+[ext_resource path="res://EDAS/PNG/elf_male.png" type="Texture" id=6]
+[ext_resource path="res://EDAS/PNG/elf_male_run_001.png" type="Texture" id=7]
+[ext_resource path="res://EDAS/PNG/elf_male_run_002.png" type="Texture" id=8]
+[ext_resource path="res://EDAS/PNG/elf_male_run_003.png" type="Texture" id=9]
+[ext_resource path="res://EDAS/PNG/elf_male_run_004.png" type="Texture" id=10]
+[ext_resource path="res://EDAS/PNG/elf_male_run_005.png" type="Texture" id=11]
+[ext_resource path="res://EDAS/PNG/elf_male_run_006.png" type="Texture" id=12]
+[ext_resource path="res://EDAS/PNG/elf_male_run_007.png" type="Texture" id=13]
+[ext_resource path="res://EDAS/PNG/elf_male_run_008.png" type="Texture" id=14]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
-"loop": true,
-"name": "Run",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 10 ) ],
+"frames": [ ExtResource( 2 ) ],
 "loop": true,
 "name": "Fall",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 10 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 2 ) ],
 "loop": true,
 "name": "Jump",
 "speed": 20.01
 }, {
-"frames": [ ExtResource( 14 ) ],
+"frames": [ ExtResource( 6 ) ],
 "loop": true,
 "name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "Run",
 "speed": 5.0
 } ]
 
