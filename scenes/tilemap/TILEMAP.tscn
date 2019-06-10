@@ -117,7 +117,7 @@ position = Vector2( 10.17, 750 )
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
-region_rect = Rect2( 542, 314, 51, 51 )
+region_rect = Rect2( 930, 250, 40, 37 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -127,6 +127,16 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="6/StaticBody2D"]
 position = Vector2( 25, 25 )
 shape = SubResource( 1 )
+
+[node name="10" type="Sprite" parent="."]
+position = Vector2( 24.5454, 833.305 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 833, 250, 30, 37 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="7" type="Sprite" parent="."]
 editor/display_folded = true
@@ -145,6 +155,16 @@ __meta__ = {
 position = Vector2( 25, 25 )
 shape = SubResource( 1 )
 
+[node name="11" type="Sprite" parent="."]
+position = Vector2( 211.367, 826.04 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 597, 314, 51, 51 )
+__meta__ = {
+"_edit_group_": true
+}
+
 [node name="8" type="Sprite" parent="."]
 editor/display_folded = true
 position = Vector2( 110.17, 750 )
@@ -161,3 +181,13 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="8/StaticBody2D"]
 position = Vector2( 25, 25 )
 shape = SubResource( 1 )
+
+[node name="9" type="Sprite" parent="."]
+position = Vector2( 66.7839, 886.913 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 745, 23, 163, 212 )
+__meta__ = {
+"_edit_group_": true
+}
