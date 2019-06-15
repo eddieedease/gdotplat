@@ -1,21 +1,29 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://scenes/objects/KinematicBody2D.gd" type="Script" id=1]
 [ext_resource path="res://EDAS/PNG/elf_male_jump_003.png" type="Texture" id=2]
-[ext_resource path="res://EDAS/PNG/elf_male_run_001.png" type="Texture" id=3]
-[ext_resource path="res://EDAS/PNG/elf_male_run_002.png" type="Texture" id=4]
-[ext_resource path="res://EDAS/PNG/elf_male_run_003.png" type="Texture" id=5]
-[ext_resource path="res://EDAS/PNG/elf_male_run_004.png" type="Texture" id=6]
-[ext_resource path="res://EDAS/PNG/elf_male_run_005.png" type="Texture" id=7]
-[ext_resource path="res://EDAS/PNG/elf_male_run_006.png" type="Texture" id=8]
-[ext_resource path="res://EDAS/PNG/elf_male_run_007.png" type="Texture" id=9]
-[ext_resource path="res://EDAS/PNG/elf_male_run_008.png" type="Texture" id=10]
-[ext_resource path="res://EDAS/PNG/elf_male_jump_004.png" type="Texture" id=11]
-[ext_resource path="res://EDAS/PNG/elf_male_jump_001.png" type="Texture" id=12]
-[ext_resource path="res://EDAS/PNG/elf_male_jump_002.png" type="Texture" id=13]
-[ext_resource path="res://EDAS/PNG/elf_male.png" type="Texture" id=14]
-[ext_resource path="res://EDAS/fireball_impact_003.png" type="Texture" id=15]
-[ext_resource path="res://EDAS/character-shield-VFX_003.png" type="Texture" id=16]
+[ext_resource path="res://EDAS/PNG/elf_male.png" type="Texture" id=3]
+[ext_resource path="res://EDAS/PNG/elf_male_run_001.png" type="Texture" id=4]
+[ext_resource path="res://EDAS/PNG/elf_male_run_002.png" type="Texture" id=5]
+[ext_resource path="res://EDAS/PNG/elf_male_run_003.png" type="Texture" id=6]
+[ext_resource path="res://EDAS/PNG/elf_male_run_004.png" type="Texture" id=7]
+[ext_resource path="res://EDAS/PNG/elf_male_run_005.png" type="Texture" id=8]
+[ext_resource path="res://EDAS/PNG/elf_male_run_006.png" type="Texture" id=9]
+[ext_resource path="res://EDAS/PNG/elf_male_run_007.png" type="Texture" id=10]
+[ext_resource path="res://EDAS/PNG/elf_male_run_008.png" type="Texture" id=11]
+[ext_resource path="res://EDAS/PNG/elf_male_jump_004.png" type="Texture" id=12]
+[ext_resource path="res://EDAS/PNG/elf_male_jump_001.png" type="Texture" id=13]
+[ext_resource path="res://EDAS/PNG/elf_male_jump_002.png" type="Texture" id=14]
+[ext_resource path="res://EDAS/PNG/elf_male_hit_001.png" type="Texture" id=15]
+[ext_resource path="res://EDAS/PNG/elf_male_hit_002.png" type="Texture" id=16]
+[ext_resource path="res://EDAS/PNG/elf_male_die_001.png" type="Texture" id=17]
+[ext_resource path="res://EDAS/PNG/elf_male_die_002.png" type="Texture" id=18]
+[ext_resource path="res://EDAS/PNG/elf_male_die_003.png" type="Texture" id=19]
+[ext_resource path="res://EDAS/PNG/elf_male_die_004.png" type="Texture" id=20]
+[ext_resource path="res://EDAS/PNG/elf_male_die_005.png" type="Texture" id=21]
+[ext_resource path="res://EDAS/fireball_impact_003.png" type="Texture" id=22]
+[ext_resource path="res://EDAS/character-shield-VFX_003.png" type="Texture" id=23]
+[ext_resource path="res://EDAS/manaspc.ttf" type="DynamicFontData" id=24]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -24,19 +32,29 @@ animations = [ {
 "name": "Fall",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
 "loop": true,
 "name": "Run",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 2 ) ],
+"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 2 ) ],
 "loop": true,
 "name": "Jump",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 14 ) ],
-"loop": true,
-"name": "Idle",
+"frames": [ ExtResource( 15 ), ExtResource( 16 ) ],
+"loop": false,
+"name": "Attacked",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ) ],
+"loop": false,
+"name": "Die",
 "speed": 5.0
 } ]
 
@@ -44,8 +62,13 @@ animations = [ {
 radius = 21.005
 height = 36.9963
 
+[sub_resource type="DynamicFont" id=3]
+size = 70
+font_data = ExtResource( 24 )
+
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( 518.294, 325.411 )
+position = Vector2( 521.6, 325.411 )
+scale = Vector2( 0.6, 0.6 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -53,7 +76,7 @@ __meta__ = {
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-animation = "Idle"
+animation = "Die"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 5.51, 9.095 )
@@ -61,9 +84,9 @@ shape = SubResource( 2 )
 one_way_collision_margin = 26.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
-editor/display_folded = true
 offset = Vector2( 0, -45.59 )
 current = true
+zoom = Vector2( 0.7, 0.7 )
 limit_bottom = 2000
 drag_margin_left = 0.0
 drag_margin_top = 0.0
@@ -74,9 +97,30 @@ __meta__ = {
 }
 
 [node name="Hud1" type="Sprite" parent="Camera2D"]
-position = Vector2( -508.66, -350.962 )
-texture = ExtResource( 15 )
+position = Vector2( -411, -350.962 )
+rotation = 1.57079
+texture = ExtResource( 22 )
 
 [node name="Hud2" type="Sprite" parent="Camera2D"]
-position = Vector2( 484.354, -319.005 )
-texture = ExtResource( 16 )
+position = Vector2( 422.333, -334.018 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 23 )
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2( -3.37158, -459.019 )
+scale = Vector2( 0.27905, 0.299999 )
+color = Color( 0.992157, 0.956863, 0.956863, 1 )
+polygon = PoolVector2Array( -1638.73, 1010.47, -1638.73, 593.802, 1694.61, 593.802, 1694.61, 1010.47 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Polygon2D"]
+modulate = Color( 0.0352941, 0, 0, 1 )
+self_modulate = Color( 0.898039, 0.172549, 0.172549, 1 )
+margin_left = -1461.0
+margin_top = 694.0
+margin_right = 1525.0
+margin_bottom = 972.0
+custom_fonts/normal_font = SubResource( 3 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "I HAD TO ESCAPE, FOR MY LIFE WAS DEPENDING OF IT"
+text = "I HAD TO ESCAPE, FOR MY LIFE WAS DEPENDING OF IT"

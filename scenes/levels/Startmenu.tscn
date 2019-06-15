@@ -3,16 +3,16 @@
 [ext_resource path="res://scenes/levels/Startmenu.gd" type="Script" id=1]
 [ext_resource path="res://EDAS/character-shield-VFX_003.png" type="Texture" id=2]
 
-[sub_resource type="CanvasItemMaterial" id=4]
+[sub_resource type="CanvasItemMaterial" id=1]
 particles_animation = true
 particles_anim_h_frames = 1
 particles_anim_v_frames = 1
 particles_anim_loop = false
 
-[sub_resource type="ParticlesMaterial" id=5]
+[sub_resource type="ParticlesMaterial" id=2]
 flag_disable_z = true
 gravity = Vector3( 0, 98, 0 )
-angular_velocity = 0.0
+angular_velocity = 1.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 
@@ -28,10 +28,10 @@ margin_top = -1.05264
 margin_bottom = -1.05261
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-margin_left = 575.0
-margin_top = 344.0
-margin_right = 625.0
-margin_bottom = 406.0
+margin_left = 425.0
+margin_top = 269.0
+margin_right = 475.0
+margin_bottom = 331.0
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
 margin_right = 50.0
@@ -52,7 +52,7 @@ margin_bottom = 62.0
 text = "QUIT"
 
 [node name="Particler" type="Sprite" parent="CenterContainer/VBoxContainer"]
-material = SubResource( 4 )
+material = SubResource( 1 )
 use_parent_material = true
 position = Vector2( 25.0001, 30.8571 )
 texture = ExtResource( 2 )
@@ -62,7 +62,7 @@ __meta__ = {
 
 [node name="Particles2D" type="Particles2D" parent="CenterContainer/VBoxContainer/Particler"]
 amount = 4
-process_material = SubResource( 5 )
+process_material = SubResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }

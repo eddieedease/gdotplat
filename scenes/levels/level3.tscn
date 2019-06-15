@@ -17,7 +17,7 @@ __meta__ = {
 
 [node name="WorldComplete" parent="." instance=ExtResource( 2 )]
 position = Vector2( 950.638, 535.469 )
-world_scene = "res://scenes/levels/start.tscn"
+world_scene = "res://scenes/levels/level4.tscn"
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 529.224, 314.196 )

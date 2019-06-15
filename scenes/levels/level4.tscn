@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/objects/Dragon.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/tilemap/basicTileSet.tres" type="TileSet" id=2]
+[ext_resource path="res://scenes/objects/WorldComplete.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/objects/Player.tscn" type="PackedScene" id=4]
+
+[node name="Level3" type="Node"]
+
+[node name="Player2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 356.453, 593.81 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 49, 49 )
+format = 1
+tile_data = PoolIntArray( 393215, 8, 0, 327710, 8, 0, 458751, 8, 0, 393246, 8, 0, 524287, 8, 0, 458782, 8, 0, 589823, 8, 0, 524318, 8, 0, 655359, 8, 0, 589854, 8, 0, 720894, 8, 0, 655390, 8, 0, 786430, 8, 0, 720926, 8, 0, 851966, 8, 0, 786462, 8, 0, 917502, 8, 0, 851989, 8, 0, 851990, 8, 0, 851991, 8, 0, 851998, 8, 0, 983038, 8, 0, 917534, 8, 0, 1048574, 8, 0, 983065, 8, 0, 983066, 8, 0, 983067, 8, 0, 983070, 8, 0, 1114110, 8, 0, 1114111, 8, 0, 1048606, 8, 0, 1179647, 8, 0, 1114142, 8, 0, 1114143, 8, 0, 1245183, 8, 0, 1179648, 8, 0, 1179649, 8, 0, 1179650, 8, 0, 1179651, 8, 0, 1179661, 8, 0, 1179662, 8, 0, 1179663, 8, 0, 1179664, 8, 0, 1179665, 8, 0, 1179666, 8, 0, 1179667, 8, 0, 1179668, 8, 0, 1179669, 8, 0, 1179670, 8, 0, 1179671, 8, 0, 1179672, 8, 0, 1179673, 8, 0, 1179674, 8, 0, 1179675, 8, 0, 1179676, 8, 0, 1179677, 8, 0, 1179678, 8, 0, 1179679, 8, 0, 1245187, 8, 0, 1245188, 8, 0, 1245189, 8, 0, 1245190, 8, 0, 1245191, 8, 0, 1245192, 8, 0, 1245193, 8, 0, 1245194, 8, 0, 1245195, 8, 0, 1245196, 8, 0, 1245197, 8, 0, 1245198, 8, 0, 1245199, 8, 0, 1245200, 8, 0, 1245201, 8, 0, 1245202, 8, 0, 1245203, 8, 0, 1245204, 8, 0, 1245205, 8, 0, 1245206, 8, 0, 1245207, 8, 0, 1245208, 8, 0, 1245209, 8, 0, 1245210, 8, 0, 1245211, 8, 0, 1245212, 8, 0, 1245213, 8, 0, 1245214, 8, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="WorldComplete" parent="." instance=ExtResource( 3 )]
+position = Vector2( 950.638, 535.469 )
+world_scene = "res://scenes/levels/start.tscn"
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 529.224, 314.196 )
