@@ -7,7 +7,7 @@ const GRAVITY = 40
 const ACCELERATION = 80
 const MAXSPEED = 400
 const JUMP_HEIGHT = -1000
-const ATTACKEDTIME = 1000;
+const ATTACKEDTIME = 50;
 
 var invin = false
 
@@ -35,7 +35,9 @@ func attacked():
 func _physics_process(delta):
 	motion.y += GRAVITY
 	var friction = false
-	
+	if attackNumb >= ATTACKEDTIME:
+		attackNumb = 0
+		isattacked = false;
 	
 
 	if isattacked == false:
@@ -67,14 +69,9 @@ func _physics_process(delta):
 				motion.x = lerp(motion.x, 0, 0.05)
 		# Does the actual moving
 			
-	elif isattacked == true && attackNumb < ATTACKEDTIME:
-		attackNumb = attackNumb + 1
-		$Sprite.play("Attacked")
-	elif isattacked == true && attackNumb > ATTACKEDTIME:
-		isattacked = false
-		attackNumb = 0
 	else:
-		print('nothing')
+		$Sprite.play("Attacked")
+		attackNumb = attackNumb + 1
 	motion = move_and_slide(motion, UP)
 	
 	

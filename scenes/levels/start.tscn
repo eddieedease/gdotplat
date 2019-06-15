@@ -1,10 +1,10 @@
 [gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/tilemap/basicTileSet.tres" type="TileSet" id=1]
-[ext_resource path="res://scenes/objects/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/objects/WorldComplete.tscn" type="PackedScene" id=3]
-[ext_resource path="res://EDAS/game bg 10-02.png" type="Texture" id=4]
-[ext_resource path="res://EDAS/trees.png" type="Texture" id=5]
+[ext_resource path="res://scenes/objects/WorldComplete.tscn" type="PackedScene" id=2]
+[ext_resource path="res://EDAS/game bg 10-02.png" type="Texture" id=3]
+[ext_resource path="res://EDAS/trees.png" type="Texture" id=4]
+[ext_resource path="res://scenes/objects/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/objects/Dragon.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Gradient" id=1]
@@ -116,10 +116,7 @@ amount = 100
 lifetime = 2.0
 process_material = SubResource( 5 )
 
-[node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 82.2571, 1268.11 )
-
-[node name="WorldComplete" parent="." instance=ExtResource( 3 )]
+[node name="WorldComplete" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1407.41, 1258.24 )
 world_scene = "res://scenes/levels/level2.tscn"
 
@@ -131,7 +128,7 @@ motion_scale = Vector2( 0.1, 1 )
 [node name="bg1" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2( 558.454, 977.611 )
 scale = Vector2( 0.48156, 0.48156 )
-texture = ExtResource( 4 )
+texture = ExtResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -142,10 +139,13 @@ motion_scale = Vector2( 0.1, 1 )
 [node name="bg2" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
 position = Vector2( 462.075, 1316.93 )
 scale = Vector2( 2.90221, 2.90221 )
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Player" parent="." instance=ExtResource( 5 )]
+position = Vector2( 82.2571, 1268.11 )
 
 [node name="Dragon" parent="." instance=ExtResource( 6 )]
 position = Vector2( -202.07, 1310.03 )

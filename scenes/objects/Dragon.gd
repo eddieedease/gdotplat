@@ -5,22 +5,16 @@ onready var player = get_node("../Player")
 
 var velocity = Vector2()
 var speed = 4000
-const HITTIME = 200
+const HITTIME = 100
 var hittimer = 0
 
 var ismoving = true;
 
 
 func _process(delta):
-	
-	if ismoving == false && hittimer < HITTIME:
-		hittimer = hittimer + 1
-	elif ismoving == false && hittimer > HITTIME:
-		print("May Move again")
-		hittimer = 0
-		ismoving = true
-		
+
 	if ismoving == true:
+		$Sprite.play("Fly")
 		if player.position.x > position.x:
 			$Sprite.flip_h = false
 			velocity.x += speed
@@ -31,10 +25,16 @@ func _process(delta):
 	        velocity.y += speed
 		if player.position.y < position.y:
 	        velocity.y -= speed
+	else:
+		$Sprite.play("Attack")
+		hittimer = hittimer + 1
+		if hittimer > HITTIME:
+			hittimer = 0
+			ismoving = true
 	pass
 
 func _physics_process(delta):
-	$Sprite.play("Fly")
+	
 	velocity = move_and_slide(velocity * delta)
 	
 	

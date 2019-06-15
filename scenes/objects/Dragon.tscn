@@ -49,8 +49,9 @@ animations = [ {
 radius = 60.1531
 height = 6.04999
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Dragon" type="KinematicBody2D"]
 position = Vector2( 518.294, 298.688 )
+scale = Vector2( 0.52, 0.52 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
